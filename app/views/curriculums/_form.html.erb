@@ -1,0 +1,37 @@
+<%= form_for(@curriculum, :html => {:multipart => true}) do |f| %>
+  <% if @curriculum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@curriculum.errors.count, "error") %> prohibited this curriculum from being saved:</h2>
+
+      <ul>
+      <% @curriculum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :sort_order %><br />
+    <%= f.text_field :sort_order %>
+  </div>
+  <div class="field">
+    <%= f.label :textbook %>
+    <%= f.file_field :textbook %>
+  </div>
+  <div class="field">
+    <%= f.label :test %>
+    <%= f.file_field :test %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

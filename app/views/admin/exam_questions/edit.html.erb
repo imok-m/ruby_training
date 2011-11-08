@@ -1,0 +1,8 @@
+<% content_for :title do %>
+  <%= @curriculum.name %>/問題編集
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to '閲覧', [:admin, @curriculum, @exam_question] %> |
+<%= link_to '戻る', admin_curriculum_exam_questions_path %>

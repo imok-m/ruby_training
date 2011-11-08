@@ -1,0 +1,27 @@
+<% content_for :title do %>
+  カリキュラム管理
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>カリキュラム</th>
+      <th>説明</th>
+      <th>並び順</th>
+      <th>テキスト</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @curriculums %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to '新規カリキュラム作成', new_admin_curriculum_path, :remote => true %> |
+<%= link_to 'メニューに戻る', admin_root_path %>

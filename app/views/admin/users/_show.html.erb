@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Login:</b>
+  <%= @user.login %>
+</p>
+
+<p>
+  <b>Login count:</b>
+  <%= @user.login_count %>
+</p>
+
+<p>
+  <b>Current login at:</b>
+  <%= @user.current_login_at && l(@user.current_login_at) %>
+</p>
+
+<p>
+  <b>Last login at:</b>
+  <%= @user.current_login_at && l(@user.last_login_at) %>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%= @user.admin_flag ? "*" : "" %>
+</p>

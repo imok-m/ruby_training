@@ -1,0 +1,30 @@
+<% content_for :title do %>
+  <%= @curriculum.name %>/採点結果
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>設問</th>
+      <th>解答例</th>
+      <th>解答</th>
+      <th>得点</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+	<td><%= question.question %></td>
+	<td><%= question.answer %></td>
+	<td><%= @answers[question.id] && @answers[question.id].answer %></td>
+	<td>
+	  <%= @answers[question.id] && @answers[question.id].score %> /
+	  <%= question.score %>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+
+<%= link_to '戻る', curriculum_path(@curriculum) %>

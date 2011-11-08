@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @curriculum.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @curriculum.description %>
+</p>
+
+<p>
+  <b>Sort order:</b>
+  <%= @curriculum.sort_order %>
+</p>
+
+<p>
+  <b>Textbook:</b>
+  <%= link_to @curriculum.textbook.original_filename, @curriculum.textbook.url %>
+</p>

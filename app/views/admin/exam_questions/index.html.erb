@@ -1,0 +1,32 @@
+<% content_for :title do %>
+  <%=@curriculum.name %>/試験問題一覧
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>見出し</th>
+      <th>得点</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exam_questions.each do |exam_question| %>
+      <tr>
+	<td><%= exam_question.title %></td>
+	<td><%= exam_question.score %></td>
+	<td><%= link_to '閲覧', [:admin, @curriculum, exam_question] %></td>
+	<td><%= link_to '編集', edit_admin_curriculum_exam_question_path(@curriculum, exam_question) %></td>
+	<td><%= link_to '削除', [:admin, @curriculum, exam_question], :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to '新規問題作成', new_admin_curriculum_exam_question_path %> |
+<%= link_to 'カリキュラム一覧に戻る', admin_curriculums_path %>

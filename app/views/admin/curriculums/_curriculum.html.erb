@@ -1,0 +1,10 @@
+<tr>
+  <td><%= curriculum.name %></td>
+  <td><%= curriculum.description %></td>
+  <td><%= curriculum.sort_order %></td>
+  <td><%= link_to curriculum.textbook.original_filename, curriculum.textbook.url %></td>
+  <td><%= link_to '試験設定', admin_curriculum_exam_questions_path(curriculum) %></td>
+  <td><%= link_to '閲覧', [:admin, curriculum], :remote => true %></td>
+  <td><%= link_to '編集', edit_admin_curriculum_path(curriculum), :remote => true %></td>
+  <td><%= link_to '削除', [:admin, curriculum], :confirm => 'Are you sure?', :method => :delete, :remote => true %></td>
+</tr>

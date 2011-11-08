@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question:</b>
+  <%= @exam_question.question %>
+</p>
+
+<p>
+  <%= label_tag :answer %>
+  <%= text_field_tag :answer %>
+</p>
+
+<%= link_to 'Next', curriculum_exam_question_path

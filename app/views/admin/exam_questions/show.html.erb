@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>見出し:</b>
+  <%= @exam_question.title %>
+</p>
+
+<p>
+  <b>設問:</b>
+  <%= @exam_question.question %>
+</p>
+
+<p>
+  <b>解答:</b>
+  <%= @exam_question.answer %>
+</p>
+
+<p>
+  <b>得点:</b>
+  <%= @exam_question.score %>
+</p>
+
+
+<%= link_to '編集', edit_admin_curriculum_exam_question_path(@curriculum, @exam_question) %> |
+<%= link_to '戻る', admin_curriculum_exam_questions_path %>

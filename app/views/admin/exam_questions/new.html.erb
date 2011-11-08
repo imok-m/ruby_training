@@ -1,0 +1,7 @@
+<% content_for :title do %>
+  <%= @curriculum.name %>/新規問題作成
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to '戻る', admin_curriculum_exam_questions_path %>

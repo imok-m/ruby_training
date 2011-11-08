@@ -1,0 +1,11 @@
+<tr>
+  <td><%= user.login %></td>
+  <td><%= user.login_count %></td>
+  <td><%= user.current_login_at && l(user.current_login_at) %></td>
+  <td><%= user.last_login_at && l(user.last_login_at) %></td>
+  <td><%= user.admin_flag ? "*" : "" %></td>
+  <td><%= link_to '試験管理', admin_user_exam_status_path(user) %></td>
+  <td><%= link_to '閲覧', [:admin, user], :remote => true %></td>
+  <td><%= link_to '編集', edit_admin_user_path(user), :remote => true %></td>
+  <td><%= link_to '削除', [:admin, user], :confirm => 'Are you sure?', :method => :delete, :remote => true %></td>
+</tr>

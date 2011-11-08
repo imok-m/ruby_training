@@ -1,0 +1,3 @@
+Examination Finished.
+
+<%= link_to 'Back', root_path %>

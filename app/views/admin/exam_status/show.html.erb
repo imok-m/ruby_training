@@ -1,0 +1,35 @@
+<% content_for :title do %>
+  <%= @user.login %>/<%= @curriculum.name %>/採点
+<% end %>
+
+<%= form_tag admin_user_exam_state_path, :method => 'PUT' do %>
+<table>
+  <thead>
+    <tr>
+      <th>設問</th>
+      <th>解答例</th>
+      <th>解答</th>
+      <th>得点</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+	<td><%= question.question %></td>
+	<td><%= question.answer %></td>
+	<td><%= @answers[question.id] && @answers[question.id].answer %></td>
+	<td>
+	  <%= text_field_tag "score[#{question.id}]", @answers[question.id] && @answers[question.id].score %> /
+	  <%= question.score %>
+	</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+<%= submit_tag '送信' %>
+<% end %>
+
+<br />
+
+<%= link_to '戻る', admin_user_exam_status_path(params[:user_id]) %>

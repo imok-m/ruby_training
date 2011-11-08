@@ -1,0 +1,9 @@
+class AdminController < ApplicationController
+  before_fileter :require_admin
+
+  private
+
+  def require_admin
+    redirect_to login_path unless current_user && current_user.admin?
+  end
+end

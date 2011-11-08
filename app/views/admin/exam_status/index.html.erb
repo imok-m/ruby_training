@@ -1,0 +1,16 @@
+<% content_for :title do %>
+  <%= @user.login %>/カリキュラム進捗状況
+<% end %>
+
+<ul>
+  <% @curriculums.each do |curriculum| %>
+    <li>
+      <%= link_to curriculum.name, admin_user_exam_state_path(params[:user_id], curriculum.id) %>
+      <%= curriculum.answers_count(params[:user_id]) %> / <%= curriculum.questions_count %>
+    </li>
+  <% end %>
+</ul>
+
+<br />
+
+<%= link_to '戻る', admin_users_path %>

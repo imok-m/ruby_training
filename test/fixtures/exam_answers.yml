@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  exam_question: 
+  answer: MyText
+  score: 1
+
+two:
+  user: 
+  exam_question: 
+  answer: MyText
+  score: 1

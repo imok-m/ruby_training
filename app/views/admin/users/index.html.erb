@@ -1,0 +1,28 @@
+<% content_for :title do %>
+  ユーザ管理
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= User.human_attribute_name :login %></th>
+      <th><%= User.human_attribute_name :login_count %></th>
+      <th><%= User.human_attribute_name :current_login_at %></th>
+      <th><%= User.human_attribute_name :last_login_at %></th>
+      <th><%= User.human_attribute_name :admin_flag %></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @users %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to '新規ユーザ作成', new_admin_user_path, :remote => true %> |
+<%= link_to 'メニューに戻る', admin_root_path %>

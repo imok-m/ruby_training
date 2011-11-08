@@ -1,0 +1,24 @@
+<% content_for :title do %>
+  <%= @curriculum.name %>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>カリキュラム:</b>
+  <%= @curriculum.name %>
+</p>
+
+<p>
+  <b>説明:</b>
+  <%= @curriculum.description %>
+</p>
+
+<p>
+<%= link_to 'テキストを読む', @curriculum.textbook.url %> |
+<%= link_to_if @curriculum.unfinished?(current_user.id), '試験に挑戦する', curriculum_exam_questions_path(@curriculum) %>
+<%= @curriculum.answers_count(current_user.id) %> / <%= @curriculum.questions_count %> |
+<%= link_to_if @curriculum.finished?(current_user.id), '採点結果を見る', curriculum_exam_answers_path(@curriculum) %>
+</p>
+
+<%= link_to '戻る', curriculums_path %>

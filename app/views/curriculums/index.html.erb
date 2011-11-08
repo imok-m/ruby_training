@@ -1,0 +1,24 @@
+<% content_for :title do %>
+  カリキュラム一覧
+<% end %>
+
+<section>
+  <table>
+    <thead>
+      <tr>
+	<th>カリキュラム</th>
+	<th>説明</th>
+	<th>状況</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @curriculums.each do |curriculum| %>
+	<tr>
+	  <td><%= link_to curriculum.name, curriculum %></td>
+	  <td><%= curriculum.description %></td>
+	  <td><%= curriculum.finished?(current_user.id) ? '完了' : '未完了' %></td>
+	</tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
